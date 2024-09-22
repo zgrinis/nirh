@@ -1,0 +1,100 @@
+$skybox-face-width: 100vmax;
+$rx-start: 0deg;
+$ry-start: 0deg;
+$rx-end: $rx-start + 359.99deg;
+$ry-end: $ry-start + 359.99deg;
+$skybox-halfwidth: $skybox-face-width * .5;
+$perspective:$skybox-face-width * .25;
+$translate-z:$skybox-halfwidth;
+.skybox {
+	perspective: $perspective;
+	background-color: #000;
+	position: fixed;
+	inset: 0;
+	display: flex;
+	z-index: -1;
+	// animation: hueSkybox 60s infinite linear;
+	transform: translate3d(0,0,0);
+	opacity: var(--cube-opacity,0);
+	transition: opacity 3s;
+}
+
+@function cube_transform($rx,$ry){
+ @return 
+ 	rotateX($rx) 
+	rotateY($ry) 
+	translateY(-$skybox-face-width * .75) 
+	translateX($skybox-halfwidth) 
+	translateZ($skybox-halfwidth * .5)
+	translate3d(0,0,0);
+}
+.cube {
+	margin: auto;
+	font-size: 4em;
+	width: $skybox-face-width;
+	margin: 1.5em auto;
+	transform-style: preserve-3d;
+	// transform: cube_transform($rx-start, $ry-start);
+	transform: cube_transform(var(--cube-rx,0deg), var(--cube-ry,0deg));
+	// animation: rotateSkybox 120s linear infinite;
+
+	will-change: transform;
+}
+
+.side {
+	position: absolute;
+	width: $skybox-face-width + 1vmax;
+	height:$skybox-face-width + 1vmax;
+	background: rgba(100, 100, 100, 0.5);
+	text-align: center;
+	line-height: 2em;
+	background-size: contain;
+	background-position: center;
+	color: #fff;
+}
+
+.front {
+	transform: translateX(-50%) translateY(50%) translateZ($skybox-halfwidth) scale(-1);
+	background-image: url('./faces/corona_ft.png');
+}
+
+.top {
+	transform: translateX(-50%) translateY(50%) rotateX(-90deg) rotateZ(-90deg) translateZ($skybox-halfwidth);
+	background-image: url('./faces/corona_up.png');
+}
+.back {
+	transform: translateX(-50%) translateY(50%) rotateY(-180deg) translateZ($skybox-halfwidth) scale(-1);
+	background-image: url('./faces/corona_bk.png');
+}
+.right {
+	transform: translateX(-50%) translateY(50%) rotateY(90deg) translateZ($skybox-halfwidth) scale(-1);
+	background-image: url('./faces/corona_rt.png');
+}
+
+.left {
+	transform: translateX(-50%) translateY(50%) rotateY(-90deg) translateZ($skybox-halfwidth) scale(-1);
+	background-image: url('./faces/corona_lf.png');
+}
+
+.bottom {
+	transform: translateX(-50%) translateY(50%) rotateX(90deg) rotateZ(90deg) translateZ($skybox-halfwidth);
+	background-image: url('./faces/corona_dn.png');
+}
+
+
+@keyframes rotateSkybox{
+	from {
+		transform: cube_transform($rx-start, $ry-start);
+	}
+	to{
+		transform: cube_transform($rx-end, $ry-end);
+	}
+}
+@keyframes hueSkybox{
+	0%,100% {
+		filter: hue-rotate(1deg);
+	}
+	50%{
+		filter: hue-rotate(360deg);
+	}
+}
