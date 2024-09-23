@@ -4,7 +4,8 @@
   "description": "hire me please",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve --mode development"
+    "start": "webpack serve --mode development",
+    "build": "webpack --config webpack.build.config.js"
   },
   "author": "Zygimantas Grinis",
   "license": "ISC",
@@ -22,6 +23,9 @@
     "typescript": "^5.6.2",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "mini-css-extract-plugin": "^2.9.1",
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
