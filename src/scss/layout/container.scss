@@ -1,0 +1,15 @@
+@use '/src/scss/variables/layout.scss' as lo;
+
+.container{
+    padding: 0 1rem;
+    margin: auto;
+    max-width: 100%;
+}
+
+@each $size,$bp in lo.$containerBreakpoints{
+    @media screen and (min-width:#{$bp}px) {
+        .container{
+            width: #{map-get($map: lo.$containerSizes, $key:$size )}px;
+        }
+    }
+}

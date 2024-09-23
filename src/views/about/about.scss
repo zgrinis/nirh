@@ -1,0 +1,22 @@
+.view-about{
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    &-heading{
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    &-text{
+        font-size: 1.5rem;
+        line-height: 2;
+        margin-bottom: 2rem;
+        &-top{
+            font-style: italic;
+            line-height: 1.6;
+            width:500px;
+            max-width:100%;
+            margin:auto;
+        }
+    }
+}

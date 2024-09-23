@@ -1,9 +1,21 @@
+@use '/src/scss/mixins/breakpoint.scss' as bp;
+
 html,body{
     min-height: 100%;
-    background-color: #000;
 }
-
+html{
+    background-color: #17181c;
+    font-size: 16px;
+}
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
-  
+
+.nav-wrap{
+    display: flex;
+    justify-content: center;
+    @include bp.up(lg){
+        justify-content: flex-end;
+    }
+
+}

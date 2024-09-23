@@ -24,7 +24,7 @@ $translate-z:$skybox-halfwidth;
  	rotateX($rx) 
 	rotateY($ry) 
 	translateY(-$skybox-face-width * .75) 
-	translateX($skybox-halfwidth) 
+	translateX($skybox-halfwidth * .75) 
 	translateZ($skybox-halfwidth * .5)
 	translate3d(0,0,0);
 }

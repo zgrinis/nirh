@@ -1,0 +1,31 @@
+$bp-xl:1920;
+$bp-lg:1440;
+$bp-md:1200;
+$bp-sm:992;
+$bp-xs:576;
+
+
+$container-w-xl:$bp-xl * .7;
+$container-w-lg:$bp-lg * .7;
+$container-w-md:$bp-md * .7;
+$container-w-sm:$bp-sm * .7;
+$container-w-xs:$bp-xs * .7;
+
+
+// from smallest to largest only
+$containerBreakpoints : (
+    xs:$bp-xs,
+    sm:$bp-sm,
+    md:$bp-md,
+    lg:$bp-lg,
+    xl:$bp-xl,
+);
+
+// from smallest to largest only
+$containerSizes : (
+    xs:$container-w-xs,
+    sm:$container-w-sm,
+    md:$container-w-md,
+    lg:$container-w-lg,
+    xl:$container-w-xl,
+);
