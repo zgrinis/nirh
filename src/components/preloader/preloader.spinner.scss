@@ -9,7 +9,7 @@ $spinner-size: 100px;
     border-bottom: $border-width solid #fff;
     border-left: $border-width solid transparent;
     border-right: $border-width solid transparent;
-    animation: Spin 5s infinite cubic-bezier(0,5,1,5);
+    animation: Spin 1.5s infinite ease-in-out;
     &-wrap{
         position: fixed;
         top: 0;
