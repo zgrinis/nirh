@@ -25,6 +25,7 @@ function ViewRender(){
   const CurrentView = useMemo(()=>{
     let current = viewsArr.find((viewItem)=>viewItem.alias === view);
     if(!current) return () => <>Nerastas view: {view}</>
+    document.title = `${current.title} | Žygimantas Grinis`;
     return current.component;
   },[view])
 
