@@ -1,6 +1,8 @@
 @use '/src/scss/variables/colors.scss' as clr;
+@use '/src/scss/mixins/breakpoint.scss' as bp;
 .view-home{
     color: clr.$white;
+    padding: 1rem;
     &-content{
         margin: auto;
         display: flex;
@@ -8,18 +10,41 @@
         gap: 1rem;
         &-wrap{
             display: flex;
-            height: calc(100vh - 56px);
+            height: calc(100dvh - 150px);
+            @include bp.up(md){
+                height: calc(100vh - 100px);
+            }
         }
     }
     &-heading{
         font-weight: 900;
-        font-size: 5rem;
-        letter-spacing: -.5rem;
+        font-size: 3rem;
+        letter-spacing: -.2rem;
+        margin-bottom: 2rem;
+        @include bp.up(md){
+            letter-spacing: -.5rem;
+            font-size: 5rem;
+        }
     }
     &-subheading{
         // letter-spacing: .865rem;
+
         justify-content: space-between;
         display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        font-size: 1.5rem;
+        
+        @include bp.up(md){
+            gap: 3rem;
+        }
+        .letter-spreader{
+            &-group{
+                flex: 1;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
     }
     &-skill-list{
         display: flex;
@@ -32,7 +57,10 @@
             & + &{
                 &::before{
                     content:'•';
-                    margin:0 2rem;
+                    margin:0 1rem;
+                    @include bp.up(md){
+                        margin:0 2rem;
+                    }
                 }
             }
         }

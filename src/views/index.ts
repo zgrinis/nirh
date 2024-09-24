@@ -15,8 +15,8 @@ export const views:View[] =[
         component:ViewAbout,
     },
     {
-        alias:'contacts',
-        title:'Contacts',
+        alias:'links',
+        title:'Links',
         component:ViewContacts,
     },
 ]
