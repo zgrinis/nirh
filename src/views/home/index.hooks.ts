@@ -7,11 +7,15 @@ const SLEEP = 5000;
 const MAX_ROTATE_X = 90;
 const MAX_ROTATE_Y = 90;
 
-const doRotation = ({rx,ry}:{rx:number,ry:number}) =>{
-    document.documentElement.setAttribute('style',`--cube-rx:${rx *.5}deg;--cube-ry:${ry *.5}deg;--cube-opacity:1`);
+const doRotation = (rotate:{rx:number,ry:number}) =>{
+    const rx = rotate.rx * .5;
+    const ry = rotate.ry * .5;
+    document.documentElement.setAttribute('style',`--cube-rx:${rx}deg;--cube-ry:${ry}deg;--cube-opacity:1`);
     clearTimeout(fadeTimeout);
+    console.log({rx,ry});
     fadeTimeout = setTimeout(() => {
-        document.documentElement.setAttribute('style', `--cube-rx:${ry *.5}deg;--cube-ry:${rx *.5}deg;--cube-opacity:0;`);
+        console.log({rx,ry});
+        document.documentElement.style.setProperty('--cube-opacity','0')
     }, SLEEP);
 }
 
