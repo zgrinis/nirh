@@ -1,3 +1,5 @@
+@use '/src/scss/mixins/breakpoint.scss' as bp;
+
 $skybox-face-width: 100vmax;
 $rx-start: 0deg;
 $ry-start: 0deg;
@@ -17,6 +19,9 @@ $translate-z:$skybox-halfwidth;
 	transform: translate3d(0,0,0);
 	opacity: var(--cube-opacity,0);
 	transition: opacity 3s;
+	@include bp.down(md){
+		transition: opacity .5s;
+	}
 }
 
 @function cube_transform($rx,$ry){

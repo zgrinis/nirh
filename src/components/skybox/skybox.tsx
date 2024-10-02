@@ -1,4 +1,3 @@
-import React, { MouseEventHandler } from 'react';
 import './skybox.scss';
 
 export const Skybox = () => (

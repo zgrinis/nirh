@@ -2,8 +2,7 @@ import './home.scss';
 import { Skybox } from "../../components/skybox/skybox";
 import { LetterSpreader } from "../../components/letterSpreader";
 import { useMouseTrack } from "./index.hooks";
-const subheading = Array.from('FRONT-END');
-const subheading2 = Array.from('DEVELOPER');
+
 export function ViewHome(){
     useMouseTrack();
     return <section className="view-home">

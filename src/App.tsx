@@ -1,7 +1,5 @@
 import React, { useMemo } from 'react';
 import './App.scss';
-import { Skybox } from './components/skybox/skybox';
-import { interpolate } from './utils/interpolate';
 import { useViewContext, ViewContextProvider } from './contexts/view';
 
 
