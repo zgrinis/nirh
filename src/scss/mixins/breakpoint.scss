@@ -6,7 +6,7 @@
     }
 };
 @mixin down($bp){
-    @media screen and (max-width:#{map-get(lo.$containerBreakpoints,$bp - 0.01)}px){
+    @media screen and (max-width:#{map-get(lo.$containerBreakpoints,$bp) - 0.02}px){
         @content
     }
 };
