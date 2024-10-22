@@ -48,6 +48,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    alias:{
+      "@scss":path.join(__dirname,'src/scss')
+    }
   },
   output: {
     filename: 'bundle.js',
