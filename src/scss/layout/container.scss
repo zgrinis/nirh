@@ -1,9 +1,9 @@
 @use '/src/scss/variables/layout.scss' as lo;
 
 .container{
-    padding: 0 1rem;
     margin: auto;
     max-width: 100%;
+    width: 100%;
 }
 
 @each $size,$bp in lo.$containerBreakpoints{

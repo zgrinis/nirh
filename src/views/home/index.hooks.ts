@@ -12,9 +12,7 @@ const doRotation = (rotate:{rx:number,ry:number}) =>{
     const ry = rotate.ry * .5;
     document.documentElement.setAttribute('style',`--cube-rx:${rx}deg;--cube-ry:${ry}deg;--cube-opacity:1`);
     clearTimeout(fadeTimeout);
-    console.log({rx,ry});
     fadeTimeout = setTimeout(() => {
-        console.log({rx,ry});
         document.documentElement.style.setProperty('--cube-opacity','0')
     }, SLEEP);
 }

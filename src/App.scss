@@ -1,4 +1,6 @@
-@use './scss/reset';
-@use './scss/main';
-@use './scss/typography';
-@use './scss/layout/container';
+@use '@scss/reset';
+@use '@scss/main';
+@use '@scss/typography';
+@use '@scss/layout/container';
+@use "@scss/components/button";
+@use "@scss/utils";

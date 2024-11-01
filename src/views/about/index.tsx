@@ -1,26 +1,44 @@
 import './about.scss';
+import { useViewContext } from '../../contexts/view';
 
 export function ViewAbout(){
-    return <div className="container text-white view-about">
-        <h1 className='view-about-heading'> My journey through web development</h1>
-        <p className='view-about-text-top'>
-        Starting with web graphic design provides a strong foundation in visual aesthetics, user experience, and design principles. As skills develop, a transition to front-end development naturally follows, allowing for the creation of interactive, responsive websites using HTML, CSS, and JavaScript. 
-        </p>
-        <p className='view-about-text'>
-        I started with web graphic design, focusing on visual aesthetics and user experience, which gave me a solid understanding of how websites should look and feel. As I grew more confident, I transitioned into front-end development, learning to bring designs to life using HTML, CSS, and JavaScript. 
-        </p>
-        <p className='view-about-text-top'>
-        Gaining some back-end experience—working with databases, servers, and APIs—enhances the ability to build more dynamic applications, making the developer well-rounded. This journey often leads to a more holistic understanding of web development, bridging the gap between design and functionality.
-        </p>
-        <p className='view-about-text'>
-            Along the way, I picked up some back-end experience, working with databases and APIs, which helped me create more dynamic and functional applications. Now, I feel like I have a well-rounded skill set that bridges design and development, allowing me to build both visually appealing and fully functional websites.
-        </p>
-        <p className='view-about-text-top'>
-        React’s component-based architecture promotes reusability and easier management of complex UIs, making development more efficient. With React, the user interface updates dynamically in response to state changes, providing a faster, more interactive experience without needing full page reloads. 
-        </p>
+    const {setView} = useViewContext();
+    return <div className="view-about">
+        <div className="container text-white">
+            <h1 className='view-about-heading'>About me</h1>
+            <section>
+                <h2>Summary</h2>
+                <p>
+                    I am a creative and detail-oriented Front-End Developer with more than 5 years of experience in building responsive websites and web applications. Strong expertise in HTML, CSS, and JavaScript, complemented by a solid foundation in graphic design principles. Passionate about creating user-friendly, visually appealing, and functional websites.
+                </p>
+            </section>
+            <section>
+                <h2>Technical Skills</h2>
+               <ul>
+                    <li>
+                        <div><b>Front-End Development:</b></div>
+                        HTML5, CSS3, JavaScript (ES6+), React.js, Vue.js, Sass/SCSS, Tailwind CSS, Bootstrap
+                    </li>
 
-        <p className='view-about-text'>
-        When I transitioned from server-side rendered components to React, I noticed several key benefits. React’s component-based structure made it easier to build and manage complex UIs, especially with reusable components that saved me time in development. The real game-changer was how React updates the interface dynamically without needing full page reloads, which made the apps feel more responsive and interactive. Plus, the rich ecosystem of tools and libraries helped streamline my workflow. Overall, switching to React improved scalability, maintainability, and provided a much smoother user experience.
-        </p>
+                    <li>
+                        <div><b>Graphic Design:</b></div>
+                        Figma, Inkscape, Adobe Creative Suite (Photoshop, Illustrator, XD)
+                    </li>
+
+                    <li>
+                        <div><b>Backend:</b></div>
+                        PHP (basic), Node.js (basic to intermediate)
+                    </li>
+
+                    <li>
+                        <div><b>Tools & Version Control:</b></div>
+                        VS Code, Git, Webpack
+                    </li>
+               </ul>
+            </section>
+           <a href="#links" onClick={()=>{setView('links')}}>
+            Contact me
+           </a>
+        </div>
     </div>
 }

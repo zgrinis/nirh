@@ -1,0 +1,25 @@
+@use "@scss/variables/colors" as clr;
+@use "sass:color";
+
+$paddingX:2rem;
+$paddingY:1rem;
+$padding: $paddingY $paddingX;
+
+$outlineWidth:2px;
+
+.btn{
+    display: inline-block;
+    padding: $padding;
+    border-radius: .5rem;
+    background-color: clr.$primary;
+    color: clr.$onPrimary;
+    text-decoration: none;
+}
+
+.btn-outlined{
+    background: transparent;
+    border: $outlineWidth solid;
+    padding: calc($paddingY - $outlineWidth) calc($paddingX - $outlineWidth);
+    // border-image: linear-gradient(45deg, blue,red);
+    border-image:linear-gradient(45deg, clr.$primary, color.adjust(clr.$primary,$hue:15deg,$lightness:40%)) 1;
+}
