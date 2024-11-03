@@ -1,6 +1,6 @@
 @use "@scss/variables/colors" as clr;
 @use "sass:color";
-
+@use '@scss/mixins/button.neon' as neon;
 $paddingX:2rem;
 $paddingY:1rem;
 $padding: $paddingY $paddingX;
@@ -23,3 +23,54 @@ $outlineWidth:2px;
     // border-image: linear-gradient(45deg, blue,red);
     border-image:linear-gradient(45deg, clr.$primary, color.adjust(clr.$primary,$hue:15deg,$lightness:40%)) 1;
 }
+
+.btn-neon{
+    display: inline-block;
+    color: color.adjust(clr.$white,$lightness:-30%);
+    text-decoration: none;
+    border-radius: 100rem;
+    padding: $paddingY * 1.5 $paddingX * 1.75;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    position: relative;
+    transition: color .1s;
+    
+    &::before{
+        content: '';
+        position: absolute;
+        top: $paddingY *.5;
+        left: $paddingX * .25;
+        width: calc(100% - $paddingX * .6);
+        height: calc(100% - $paddingY * 1.25);
+        border: 2px solid;
+        border-radius: 100rem;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .3s;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        top: $paddingY *.5;
+        left: $paddingX * .25;
+        width: calc(100% - $paddingX * .6);
+        height: calc(100% - $paddingY * 1.25);
+        border: 2px solid;
+        border-radius: 100rem;
+        pointer-events: none;
+        transition: border-color .2s;
+    }
+    &:hover,&.--active{
+        color: clr.$white;
+        &::before{
+            opacity: 1;
+        }
+        &::after{
+            border-color: color.adjust(clr.$primary,$lightness:30%);
+        }
+    }
+}
+
+@include neon.ColorVariant('primary',clr.$primary);
+@include neon.ColorVariant('secondary',clr.$secondary);
+@include neon.Size('sm',.875rem);

@@ -1,4 +1,5 @@
 @use '/src/scss/variables/layout.scss' as lo;
+@use 'sass:map';
 
 .container{
     margin: auto;
@@ -9,7 +10,7 @@
 @each $size,$bp in lo.$containerBreakpoints{
     @media screen and (min-width:#{$bp}px) {
         .container{
-            width: #{map-get($map: lo.$containerSizes, $key:$size )}px;
+            width: #{map.get($map: lo.$containerSizes, $key:$size )}px;
         }
     }
 }

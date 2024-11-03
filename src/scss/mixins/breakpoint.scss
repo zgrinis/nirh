@@ -1,12 +1,13 @@
+@use "sass:map";
 @use '/src/scss/variables/layout.scss' as lo;
 
 @mixin up($bp){
-    @media screen and (min-width:#{map-get(lo.$containerBreakpoints,$bp)}px){
+    @media screen and (min-width:#{map.get(lo.$containerBreakpoints,$bp)}px){
         @content
     }
 };
 @mixin down($bp){
-    @media screen and (max-width:#{map-get(lo.$containerBreakpoints,$bp) - 0.02}px){
+    @media screen and (max-width:#{map.get(lo.$containerBreakpoints,$bp) - 0.02}px){
         @content
     }
 };

@@ -1,0 +1,46 @@
+@use 'sass:color';
+@use '@scss/variables/colors' as clr;
+
+@mixin ColorVariant($colorName, $color){
+    .btn-neon.--#{$colorName}{
+        background-image: linear-gradient(
+            to top, 
+            color.adjust(clr.$primary,$lightness:-15%), 
+            color.adjust(clr.$primary,$lightness:-10%)
+        );
+        &::before{
+            border-color: color.adjust($color, $lightness:70%);
+            filter: blur(.4rem);
+        }
+        &::after{
+            border-color: $color;
+        }
+        &:hover, &.--active, &:active{
+            &::after{
+                border-color: color.adjust($color,$lightness:30%);
+            }
+        }
+    }
+}
+
+
+@mixin Size($sizeName,$fontSize){
+    $baseXRem: $fontSize * 1.5;
+    $baseYRem: $fontSize * 1.25;
+    .btn-neon.--#{$sizeName}{
+        padding: $baseYRem $baseXRem;
+        font-size: $fontSize;
+        &::before{
+            top: $baseYRem *.5;
+            left: $baseXRem * .25;
+            width: calc(100% - $baseXRem * .6);
+            height: calc(100% - $baseYRem * 1.25);
+        }
+        &::after{
+            top: $baseYRem *.5;
+            left: $baseXRem * .25;
+            width: calc(100% - $baseXRem * .6);
+            height: calc(100% - $baseYRem * 1.25);
+        }
+    }
+}
