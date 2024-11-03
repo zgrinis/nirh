@@ -31,16 +31,16 @@
         padding: $baseYRem $baseXRem;
         font-size: $fontSize;
         &::before{
-            top: $baseYRem *.5;
+            top: $baseYRem *.25;
             left: $baseXRem * .25;
             width: calc(100% - $baseXRem * .6);
-            height: calc(100% - $baseYRem * 1.25);
+            height: calc(100% - $baseYRem * .75);
         }
         &::after{
-            top: $baseYRem *.5;
+            top: $baseYRem *.25;
             left: $baseXRem * .25;
             width: calc(100% - $baseXRem * .6);
-            height: calc(100% - $baseYRem * 1.25);
+            height: calc(100% - $baseYRem * .75);
         }
     }
 }

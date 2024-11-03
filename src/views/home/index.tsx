@@ -31,7 +31,7 @@ export function ViewHome(){
                 </div>
           
                 <div className='view-home-cta'>
-                    <a className='btn btn-neon --primary' href="#about" onClick={()=>{setView('about')}}>
+                    <a className='btn btn-neon --primary --lg' href="#about" onClick={()=>{setView('about')}}>
                         Find out what i am about!
                     </a>
                 </div>
