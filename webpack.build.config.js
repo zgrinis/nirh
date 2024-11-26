@@ -49,6 +49,12 @@ module.exports = {
       chunks: 'all', // Splits your code into vendor and app files
     },
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+    alias:{
+      "@scss":path.join(__dirname,'src/scss')
+    }
+  },
   plugins: [
     // new CleanWebpackPlugin(), // Cleans the build folder before each build
     new HtmlWebpackPlugin({
