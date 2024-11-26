@@ -24,23 +24,25 @@
 }
 
 
-@mixin Size($sizeName,$fontSize){
+@mixin Size($sizeName,$fontSizeValue){
+    $fontSize: $fontSizeValue * 1rem;
     $baseXRem: $fontSize * 1.5;
     $baseYRem: $fontSize * 1.25;
     .btn-neon.--#{$sizeName}{
         padding: $baseYRem $baseXRem;
         font-size: $fontSize;
+        line-height: $fontSizeValue;
         &::before{
             top: $baseYRem *.25;
             left: $baseXRem * .25;
             width: calc(100% - $baseXRem * .6);
-            height: calc(100% - $baseYRem * .75);
+            height: calc(100% - $baseYRem * .6);
         }
         &::after{
             top: $baseYRem *.25;
             left: $baseXRem * .25;
             width: calc(100% - $baseXRem * .6);
-            height: calc(100% - $baseYRem * .75);
+            height: calc(100% - $baseYRem * .6);
         }
     }
 }

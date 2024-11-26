@@ -34,7 +34,7 @@ $outlineWidth:2px;
     letter-spacing: .5px;
     position: relative;
     transition: color .1s;
-    
+    border: 1px solid rgba(clr.$white,.1);
     &::before{
         content: '';
         position: absolute;
@@ -73,5 +73,5 @@ $outlineWidth:2px;
 
 @include neon.ColorVariant('primary',clr.$primary);
 @include neon.ColorVariant('secondary',clr.$secondary);
-@include neon.Size('sm',.875rem);
-@include neon.Size('lg',1.5rem);
+@include neon.Size('sm',.875);
+@include neon.Size('lg',1.5);

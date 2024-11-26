@@ -1,0 +1,93 @@
+@use "variables" as *;
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?n7b1kk') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?n7b1kk') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?n7b1kk##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-linkedin {
+  &:before {
+    content: $icon-linkedin;     
+    color: #0077b5;
+  }
+}
+.icon-github {
+  &:before {
+    content: $icon-github; 
+  }
+}
+.icon-webpack {
+  &:before {
+    content: $icon-webpack;     
+    color: #8dd6f9;
+  }
+}
+.icon-php {
+  &:before {
+    content: $icon-php;     
+    color: #777bb4;
+  }
+}
+.icon-node {
+  &:before {
+    content: $icon-node;     
+    color: #393;
+  }
+}
+.icon-inkscape {
+  &:before {
+    content: $icon-inkscape; 
+  }
+}
+.icon-figma {
+  &:before {
+    content: $icon-figma;     
+    color: #f24e1e;
+  }
+}
+.icon-graphql {
+  &:before {
+    content: $icon-graphql;     
+    color: #e10098;
+  }
+}
+.icon-sass {
+  &:before {
+    content: $icon-sass;     
+    color: #c69;
+  }
+}
+.icon-typescript {
+  &:before {
+    content: $icon-typescript;     
+    color: #007acc;
+  }
+}
+.icon-react {
+  &:before {
+    content: $icon-react;     
+    color: #61dafb;
+  }
+}
+

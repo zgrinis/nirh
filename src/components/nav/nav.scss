@@ -2,7 +2,31 @@
     padding: .25rem 0;
     &-list{
         display: flex;
-        gap: 1rem;
+        // gap: 1rem;
+        &-item{
+            &:first-child{
+                .btn-neon{
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+            }
+            &:last-child{
+                .btn-neon{
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+            
+            &:not(:first-child, :last-child){
+                .btn-neon{
+                    border-radius : 0;
+                }
+            }
+            & + & {
+                margin-left: -1px;
+            }
+
+        }
     }
     &-link{
         display: block;

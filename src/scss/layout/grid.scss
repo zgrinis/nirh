@@ -1,0 +1,12 @@
+@use '@scss/mixins/breakpoint' as bp;
+
+$grid-gap: 3rem;
+.col-2{
+    display: grid;
+    grid-template-columns: 100%;
+    gap: $grid-gap;
+    @include bp.up(md){
+        grid-template-columns: repeat(2,calc(50% - $grid-gap * .5));
+    }
+
+}

@@ -4,6 +4,9 @@ $h1-font-size: 3rem;
 $h2-font-size:2.25rem;
 $h3-font-size:1.75rem;
 
+body{
+    color:#fff;
+}
 
 h1{
     font-size: $h1-font-size;
@@ -19,4 +22,22 @@ h3{
     .text-#{$type}{
         color: $color!important;
     }
+}
+
+p{
+    line-height: 1.6;
+    text-align: justify;
+}
+
+b{
+    font-weight: 700;
+}
+
+.view-heading{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    align-self: center;
 }

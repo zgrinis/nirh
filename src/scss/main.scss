@@ -1,5 +1,7 @@
 @use '/src/scss/mixins/breakpoint.scss' as bp;
-
+* {
+    box-sizing: border-box;
+}
 html,body{
     min-height: 100%;
 }
@@ -18,4 +20,11 @@ body {
         justify-content: flex-end;
     }
 
+}
+
+.view{
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
 }
