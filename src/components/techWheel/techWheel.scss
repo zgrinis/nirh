@@ -1,0 +1,84 @@
+@use '@scss/mixins/breakpoint' as bp;
+
+.tech-wheel{
+    position: relative;
+    // background-color: rgba(#fff,.1);
+    display: flex;
+    width: 600px;
+    max-width: 100%;
+    margin: auto;
+    &::before{
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+    }
+    &-content{
+        margin: auto;
+    }
+    &-active{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-height: 50%;
+        width: 50%;
+        text-align: center;
+        
+        &-content{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            animation: FadeUp .3s ease-out;
+        }
+    }
+    &-heading{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    &-btn-wrap{
+        transition: transform .3s;
+        &:hover{
+            transform: scale(.9);
+        }
+        &.--active{
+            transform: scale(1.25);
+            i{
+                text-shadow: 0 0 2rem rgba(#fff,.2);
+            }
+        }
+    }
+    &-item{
+        font-size: 5rem;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        &-wrap{
+            position: absolute;
+            top: 0;
+            transform-origin: 50% 100%;
+            height: 50%;
+            width: 0;
+            padding-top: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        @include bp.down(lg){
+            font-size: 4rem;
+        }
+        @include bp.down(sm){
+            font-size: 3rem;
+        }
+    }
+}
+
+@keyframes FadeUp{
+    from {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
