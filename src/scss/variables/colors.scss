@@ -1,8 +1,13 @@
+@use "sass:color";
+
 $primary: #00537b;
 $secondary: #7b5600;
 $onPrimary: #fff;
 $white:white;
 $black:black;
+
+$gradient: linear-gradient(45deg, $primary, color.adjust($primary,$hue:15deg,$lightness:40%));
+
 $colorMap:(
     'primary':$primary,
     'white':$white,

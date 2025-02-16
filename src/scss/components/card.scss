@@ -1,0 +1,17 @@
+@use 'sass:color';
+@use '@scss/variables/colors' as clr;
+
+.card {
+    border-radius: 1rem;
+    background: transparent;
+    padding: 1rem 2rem;
+    // background-color: #1e1e20;
+    background-image: linear-gradient(
+        to top, 
+        color.adjust(clr.$primary,$lightness:-15%), 
+        color.adjust(clr.$primary,$lightness:-10%)
+    );
+    text-align: center;
+    box-shadow: 20px 20px 60px #000000,
+        -20px -20px 60px #1d1d1d;
+}

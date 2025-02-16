@@ -1,4 +1,5 @@
 @use './variables/colors.scss' as clr;
+@use 'sass:color';
 
 $h1-font-size: 3rem;
 $h2-font-size:2.25rem;
@@ -33,6 +34,9 @@ b{
     font-weight: 700;
 }
 
+
+$underlineAnimationDur: 1s;
+
 .view-heading{
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -40,4 +44,50 @@ b{
     font-weight: 700;
     text-align: center;
     align-self: center;
+
+    &.underlined {
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            right: 0;
+            height: .25rem;
+            // background-color: #f9d400;
+            background-color: color.adjust(clr.$secondary,$lightness:30%);
+            border-radius: 1rem;
+            transform: scaleX(0);
+            animation: underlineStretch $underlineAnimationDur forwards ease-out;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: -1.125rem;
+            left: 0;
+            right: 0;
+            height: .5rem;
+            background-color: clr.$secondary;
+            filter: blur(0.4rem);
+            transform: scaleX(0);
+            animation: underlineStretch $underlineAnimationDur forwards ease-out;
+        }
+
+        @for $i from 1 through 5 {
+            &.underline-delay-#{$i}{
+                &::before,&::after{
+                    animation-delay: $underlineAnimationDur * $i;
+                }
+            }
+        }
+    }
+}
+
+@keyframes underlineStretch {
+    from{
+        transform: scaleX(0);
+    }
+    to{
+        transform: scaleX(1.1);
+    }
 }

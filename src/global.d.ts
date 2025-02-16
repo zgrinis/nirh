@@ -5,8 +5,8 @@ declare module '*.png' {
 
 type View = {
     alias:string,
-    component:React.FC,
     title:string,
+    component?:React.FC,
     initial?:boolean,
 }
 

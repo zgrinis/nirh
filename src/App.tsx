@@ -7,6 +7,7 @@ import { views as viewsArr } from './views';
 import { Nav } from './components/nav';
 import { Preloader } from './components/preloader';
 import { facesLg, facesSm } from './facesPaths';
+import { Logo } from './components/logo';
 
 const facesArr = window.innerWidth > 1440 ? facesLg : facesSm;
 
@@ -15,6 +16,9 @@ const App: React.FC = () => {
     <Preloader imagePaths={facesArr}>
       <ViewContextProvider>
         <div className="container nav-wrap">
+          {/* <div className="logo-wrap">
+            <Logo />
+          </div> */}
           <Nav views={viewsArr} />
         </div>
         <ViewRender />
