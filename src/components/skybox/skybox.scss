@@ -60,30 +60,63 @@ $translate-z:$skybox-halfwidth;
 
 .front {
 	transform: translateX(-50%) translateY(50%) translateZ($skybox-halfwidth) scale(-1);
-	background-image: url('./faces/corona_ft.png');
+	background-image: url('./faces/mobile/sm_corona_ft.png');
+	background-size: cover;
 }
 
 .top {
 	transform: translateX(-50%) translateY(50%) rotateX(-90deg) rotateZ(-90deg) translateZ($skybox-halfwidth);
-	background-image: url('./faces/corona_up.png');
+	background-image: url('./faces/mobile/sm_corona_up.png');
+	background-size: cover;
 }
 .back {
 	transform: translateX(-50%) translateY(50%) rotateY(-180deg) translateZ($skybox-halfwidth) scale(-1);
-	background-image: url('./faces/corona_bk.png');
+	background-image: url('./faces/mobile/sm_corona_bk.png');
+	background-size: cover;
 }
 .right {
 	transform: translateX(-50%) translateY(50%) rotateY(90deg) translateZ($skybox-halfwidth) scale(-1);
-	background-image: url('./faces/corona_rt.png');
+	background-image: url('./faces/mobile/sm_corona_rt.png');
+	background-size: cover;
 }
 
 .left {
 	transform: translateX(-50%) translateY(50%) rotateY(-90deg) translateZ($skybox-halfwidth) scale(-1);
-	background-image: url('./faces/corona_lf.png');
+	background-image: url('./faces/mobile/sm_corona_lf.png');
+	background-size: cover;
 }
 
 .bottom {
 	transform: translateX(-50%) translateY(50%) rotateX(90deg) rotateZ(90deg) translateZ($skybox-halfwidth);
-	background-image: url('./faces/corona_dn.png');
+	background-image: url('./faces/mobile/sm_corona_dn.png');
+	background-size: cover;
+}
+
+
+.skybox{
+	@include bp.up(lg){
+		.front {
+			background-image: url('./faces/corona_ft.png');
+		}
+		
+		.top {
+			background-image: url('./faces/corona_up.png');
+		}
+		.back {
+			background-image: url('./faces/corona_bk.png');
+		}
+		.right {
+			background-image: url('./faces/corona_rt.png');
+		}
+		
+		.left {
+			background-image: url('./faces/corona_lf.png');
+		}
+		
+		.bottom {
+			background-image: url('./faces/corona_dn.png');
+		}
+	}
 }
 
 
